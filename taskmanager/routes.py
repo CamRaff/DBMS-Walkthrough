@@ -12,4 +12,4 @@ def home():
     '''
         This function renders the base.html template
     '''
-    return render_template("base.html")
+    return render_template("tasks.html")
