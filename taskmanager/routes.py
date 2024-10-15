@@ -19,7 +19,8 @@ def categories():
     '''
         This function renders the categories.html template
     '''
-    return render_template("categories.html")
+    categories = list(Category.query.order_by(Category.category_name).all())
+    return render_template("categories.html", categories=categories)
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
