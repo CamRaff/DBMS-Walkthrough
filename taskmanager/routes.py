@@ -12,14 +12,15 @@ def home():
     '''
         This function renders the base.html template
     '''
-    return render_template("tasks.html")
+    tasks = list(Task.query.order_by(Task.id).all())
+    return render_template("tasks.html", tasks=tasks)
 
 @app.route("/categories")
 def categories():
     '''
         This function renders the categories.html template
     '''
-    categories = list(Category.query.order_by(Category.category_name).all())
+    categories = list(Category.query.order_by(Category.category_name).all()) #noqa
     return render_template("categories.html", categories=categories)
 
 @app.route("/add_category", methods=["GET", "POST"])
@@ -61,7 +62,7 @@ def add_task():
     '''
         This function renders the add_category.html template
     '''
-    categories = list(Category.query.order_by(Category.category_name).all())
+    categories = list(Category.query.order_by(Category.category_name).all()) #noqa
     if request.method == "POST":
         task = Task(
             task_name=request.form.get("task_name"),
