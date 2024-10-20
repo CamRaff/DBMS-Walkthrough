@@ -7,7 +7,7 @@ from taskmanager import app, db
 
 # Use app.app_context() to push the application context
 with app.app_context():
-    db.create_all()  # This will create the tables defined in your models
+db.create_all()  # This will create the tables defined in your models
     print("Tables created successfully!")
 
 
