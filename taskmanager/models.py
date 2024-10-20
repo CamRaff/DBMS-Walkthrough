@@ -3,7 +3,7 @@
 '''
 
 # Import the app and db from your taskmanager module
-from taskmanager import app, db
+from taskmanager import app
 from taskmanager import db
 
 # Use app.app_context() to push the application context
