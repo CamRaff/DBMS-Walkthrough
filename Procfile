@@ -1,1 +1,1 @@
-web: python3 run:relational-walkthrough
+web: python3 run:app
